@@ -77,7 +77,16 @@ class MyTableState extends State<MyTable> {
 
   TableRow createRow(String txt) {
     return TableRow(children: <Widget>[
-      Container(padding: const EdgeInsets.all(10), child: Text(txt))
+      Container(padding: const EdgeInsets.all(10), child: Text(txt)),
+      Container(
+          padding: const EdgeInsets.all(10),
+          child: IconButton(
+              onPressed: () {
+                print("Delete table row");
+                //remove row
+                removeRow();
+              },
+              icon: const Icon(Icons.delete)))
     ]);
   }
 
@@ -86,4 +95,8 @@ class MyTableState extends State<MyTable> {
       tr.add(createRow(txt));
     });
   }
+}
+
+void removeRow() { 
+  
 }
